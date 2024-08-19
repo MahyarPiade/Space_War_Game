@@ -6,6 +6,8 @@ class Sound:
     """Initialize the sound effect and background music of the game"""
     def __init__(self):
         self.bg_music = pygame.mixer.music.load("bg_music.mp3")
+        pygame.mixer.music.set_volume(0.75)
+
         self.bullet_sound = pygame.mixer.Sound("bullet_sound_1.wav")
         self.bullet_sound.set_volume(0.25)
 
