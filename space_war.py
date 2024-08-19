@@ -7,6 +7,7 @@ from bg import Bg
 from alien import Alien
 from game_stats import GameStats
 from button import Button
+from sound import Sound
 from scoreboard import Scoreboard
 from time import sleep
 
@@ -16,10 +17,11 @@ class SpaceWar:
     def __init__(self):
         """Initialize the game, and create game resources"""
         pygame.init()
-        pygame.display.set_caption("Alien Invasion")
+        pygame.display.set_caption("Space Wars")
         self.run = True
         self.setting = Settings()
         self.screen = pygame.display.set_mode((self.setting.screen_width, self.setting.screen_height))
+        self.sound = Sound()
         self.stats = GameStats(self)
         self.sb = Scoreboard(self)
         self.back = Bg(self)
@@ -54,6 +56,7 @@ class SpaceWar:
         if len(self.bullets) < self.setting.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+            self.sound.fire_sound()
 
     def _create_alien(self, alien_number, row_number):
         alien = Alien(self)
@@ -174,6 +177,7 @@ class SpaceWar:
 
         if not self.stats.game_active:
             self.play_button.draw_button()
+            self.sound.bg_sound()
 
     def _check_events(self):
         # Watch for keyboard and mouse events.

@@ -4,12 +4,12 @@ from pygame.sprite import Sprite
 
 class Ship(Sprite):
     """A class to manage the ship"""
-    def __init__(self, ai_game):
+    def __init__(self, sw_game):
         super().__init__()
         """Initialize the ship and set its starting position"""
-        self.screen = ai_game.screen
+        self.screen = sw_game.screen
         self.color_key = "white"
-        self.screen_rect = ai_game.screen.get_rect()
+        self.screen_rect = sw_game.screen.get_rect()
 
         # Load the ship image and get its rect and make the rect invisible.
         self.image = pygame.image.load("Ship.jpeg")

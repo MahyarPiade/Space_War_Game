@@ -1,11 +1,15 @@
+import json
+import os
+
+
 class GameStats:
     """Track statics for Alien Invasion"""
-    def __init__(self, ai_game):
+    def __init__(self, sw_game):
         """Initialize statics"""
-        self.settings = ai_game.setting
+        self.settings = sw_game.setting
         self.reset_stats()
         self.game_active = False
-        self.high_score = 0
+        self._save_game()
 
     def reset_stats(self):
         """Initialize statics that can change throughout the game"""
@@ -13,5 +17,13 @@ class GameStats:
         self.score = 0
         self.level = 1
 
-
-
+    def _save_game(self):
+        """Save the high score in a json file"""
+        if not os.path.exists("high_score.json"):
+            with open("high_score.json", "w") as high:
+                json.dump(0, high)
+            with open("high_score.json") as h:
+                self.high_score = json.load(h)
+        else:
+            with open("high_score.json") as h:
+                self.high_score = json.load(h)

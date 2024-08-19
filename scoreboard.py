@@ -1,3 +1,4 @@
+import json
 import pygame.font
 from pygame.sprite import Group
 from ship import Ship
@@ -5,13 +6,13 @@ from ship import Ship
 
 class Scoreboard:
     """A class to report scoring information"""
-    def __init__(self, ai_game):
+    def __init__(self, sw_game):
         """Initialize scorekeeping attributes"""
-        self.ai_game = ai_game
-        self.screen = ai_game.screen
+        self.sw_game = sw_game
+        self.screen = sw_game.screen
         self.screen_rect = self.screen.get_rect()
-        self.setting = ai_game.setting
-        self.stats = ai_game.stats
+        self.setting = sw_game.setting
+        self.stats = sw_game.stats
 
         # Font settings for scoring information.
         self.text_color = (30, 30, 30)
@@ -62,7 +63,7 @@ class Scoreboard:
         # Show the remaining lives of player.
         self.ships = Group()
         for ship_number in range(self.stats.ships_left):
-            ship = Ship(self.ai_game)
+            ship = Ship(self.sw_game)
             ship.rect.x = 10 + ship_number * ship.rect.width
             ship.rect.y = 10
             self.ships.add(ship)
@@ -73,6 +74,8 @@ class Scoreboard:
         if self.stats.score > self.stats.high_score:
             self.stats.high_score = self.stats.score
             self.prep_high_score()
+            with open("high_score.json", "w") as high:
+                json.dump(self.stats.high_score, high)
 
     def show_score(self):
         """Draw the scores, level and ships to the screen"""
