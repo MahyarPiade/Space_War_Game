@@ -236,7 +236,7 @@ print("game over")
 print("test")
 print("2")
 print("while")
-
+print(3)
 
 
 
