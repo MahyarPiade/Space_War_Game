@@ -231,6 +231,9 @@ class SpaceWar:
 ai = SpaceWar()
 ai.run_game()
 
+print("hi")
+
+
 
 
 
