@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbb9d42d-8209-4ec5-9ac7-396d93a5b93f" name="Changes" comment="game over" />
+    <list default="true" id="dbb9d42d-8209-4ec5-9ac7-396d93a5b93f" name="Changes" comment="game over">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +31,7 @@
     "Python.scoreboard.executor": "Run",
     "Python.space_war.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ba0ef4e8",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Mahyar/PycharmProjects",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.grazie"
   }
