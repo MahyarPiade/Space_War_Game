@@ -231,11 +231,6 @@ class SpaceWar:
 ai = SpaceWar()
 ai.run_game()
 
-print("hi")
-print("game over")
-print("test")
-print("2")
-print("bruce")
 
 
 
